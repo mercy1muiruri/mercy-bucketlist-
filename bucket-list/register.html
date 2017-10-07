@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>register</title>
+  <meta charset="utf-8">
+
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href=" js/bootstrap.min.js">
+
+</head>
+<body>
+
+<div class="container">
+	<center><h1>mobile application</h1></center>
+ <div class="col-md-3 "></div>
+ <div class="col-md-6 ">
+
+ <form method="POST" action="register.html">
+<label>first Name :</label>
+<input type="text" name="firstname" id="firstname"/>
+<label>second Name :</label>
+<input type="text" name="secondname" id="secondname"/>
+<label>Password :</label>
+<input type="password" name="password" id="password"/>
+<input type="button" value="register" id="submit" onclick="validate()"/>
+</form>
+
+</div>
+   <div class="col-md-3 "></div>
+</div>
+<script>
+var attempt = 3; // Variable to count number of attempts.
+// Below function Executes on click of login button.
+function validate(){
+var fisrtname = document.getElementById("firstname").value;
+var secondname = document.getElementById("secondname").value;
+var password = document.getElementById("password").value;
+if ( fisrtname == "mercy " && secondname == "shiko" && password == "111"){
+alert ("Login successfully");
+window.location = "register.html"; // Redirecting to other page.
+return false;
+}
+else{
+attempt --;// Decrementing by one.
+alert("You have left "+attempt+" attempt;");
+// Disabling fields after 3 attempts.
+if( attempt == 0){
+document.getElementById("firstname").disabled = true;
+document.getElementById("secondname").disabled = true;
+document.getElementById("password").disabled = true;
+document.getElementById("submit").disabled = true;
+return false;
+}
+}
+}
+</script>
+  
+</body>
+</html>
